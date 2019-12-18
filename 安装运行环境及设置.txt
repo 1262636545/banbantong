@@ -1,0 +1,15 @@
+1、安装python3.*
+2、pip install *    安装程序几个库文件,具体库见程序首段
+3、安装谷歌浏览器
+4、安装谷歌浏览器驱动：
+http://npm.taobao.org/mirrors/chromedriver/
+并把浏览器相应版本的.EXE文件复制到Anaconda根目录。或复制到已配置过的python环境变量目录中去。
+5、安装tesseract-ocr-w64-setup-v5.0.0.20190623验证码识别软件，后再更改pytesseract.py这个库程序源文件中调用识别程序的路径.
+比如：
+将C:\ProgramData\Anaconda3\Lib\site-packages\pytesseract下的pytesseract.py库程序源文件的37行左右,修改识别验证码软件的路径以下：
+tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe'
+注意安装的路径的不同！注意32位与64位的安装位置也不同！
+6、注意：
+1、按提示填写“基础数据.xlsx”
+2、自己的账号一定要测试一下，能不能登陆！！
+3、自己登陆网站，并查看手动录入自己班数据时究竟该选哪些选项才是正常的，以确保“基础数据.xlsx”表中的数据与网站中选项数据一致！！！
