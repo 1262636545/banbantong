@@ -213,9 +213,6 @@ for row in pbar:
 
     #条件有错！！！
     if getattr(row, '使用器材') == getattr(row, '使用器材'):
-    # if (str(getattr(row, '使用器材')) != 'nan') |  (str(getattr(row, '使用器材')) != 'Nan') | (str(getattr(row, '使用器材')) != 'NaN') :
-        # print('')
-    # else:
         s14 = bs.find_element_by_id('txtSyqc')
         s14.send_keys(str(getattr(row, '使用器材')))
 
@@ -230,9 +227,6 @@ for row in pbar:
     
     #使用情况：TextBox11 元素，如果要加的话，则使用与使用器材相似的语句，并在教师填写的原表中加上使用情况一列，放在最后！
     if getattr(row, '班班通类别') == getattr(row, '班班通类别'):
-    # if (str(getattr(row, '班班通类别')) != 'nan') | (str(getattr(row, '班班通类别')) != 'Nan') | (str(getattr(row, '班班通类别')) != 'NaN'):
-        # print('')
-    # else:
         s12 = bs.find_element_by_id('ddl_kemutype')
         Select(s12).select_by_visible_text(str(getattr(row, '班班通类别')))
     
