@@ -187,20 +187,21 @@ def xiancheng(df,n):
     # 登陆，并进入新增数据录入界面，注意网络因素，加多页面加载的延时时间
     login()
     time.sleep(4)
-    bs.find_element_by_xpath("/html/body/div[1]/aside[1]/div/section/div/ul/li[10]/a/span[1]").click()
-    time.sleep(4)
-    bs.find_element_by_xpath("/html/body/div[1]/aside[1]/div/section/div/ul/li[10]/ul/li[2]/a").click()
-    time.sleep(4)
+    #谷歌浏览器查看网页元素xpath的步骤：F12-左上角箭头-选择查看的元素右键选中-返回Elements代码框-右键copy-选择xpath
+    bs.find_element_by_xpath("/html/body/div[1]/aside[1]/div/section/div/ul/li[9]/a/span[1]").click()
+    time.sleep(8)
+    bs.find_element_by_xpath("/html/body/div[1]/aside[1]/div/section/div/ul/li[9]/ul/li[2]/a").click()
+    time.sleep(6)
     iframe = bs.find_elements_by_tag_name("iframe")[1]
     bs.switch_to.frame(iframe)
-    time.sleep(3)
+    time.sleep(6)
     bs.execute_script("javascript:add()")
-    time.sleep(3)
+    time.sleep(6)
     bs.switch_to.default_content()
-    time.sleep(3)
+    time.sleep(6)
     iframe = bs.find_elements_by_tag_name("iframe")[2]
     bs.switch_to.frame(iframe)
-    time.sleep(2)
+    time.sleep(6)
     
     #遍历上传数据所有行，含索引。并设置进度条范围
     pbar = df.itertuples()
@@ -276,7 +277,7 @@ def xiancheng(df,n):
         
         #这是提交表单的方式------------2021年用的这个方式！2022年测试不成功改回这个方式。
         bs.execute_script("javascript:submitForm()")
-        time.sleep(1)
+        time.sleep(5)
             
         print("成功录入 %s 老师 %s 的课程，现已录入 %d 条数据."  % (getattr(row, '老师'),getattr(row, '工作日'), ok_n))
     
